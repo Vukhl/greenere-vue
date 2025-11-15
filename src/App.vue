@@ -1,11 +1,12 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
     <main>
       <router-view />
       <Products id="product-section"/>
       <Blog id="blog-section"/>
       <Gallery id="gallery-section" />
       <Mailing />
+      <Footer />
     </main>
   </div>
 </template>
@@ -16,19 +17,24 @@ import Products from './components/Products.vue';
 import Blog from './components/Blog.vue';
 import Gallery from './components/Gallery.vue';
 import Mailing from './components/Mailing.vue';
+import Footer from './components/Footer.vue';
 export default {
   name: 'App',
   components: {
     Products,
     Blog,
     Gallery,
-    Mailing
+    Mailing,
+    Footer
   },
   
 }
 </script>
 
-<style scoped>
+<style>
+[v-cloak] {
+  display: none;
+}
 .app {
   text-align: center;
   padding: 2rem;
